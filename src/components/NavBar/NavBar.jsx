@@ -20,31 +20,9 @@ export const NavBar = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll>
 
-                    <NavDropdown title="Noticias" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#action3"> Últimas noticias </NavDropdown.Item>
-                        <NavDropdown.Item href="#action4"> Próximos lanzamientos </NavDropdown.Item>
-                        <NavDropdown.Item href="#action4"> Eventos </NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href="#action1"> Playstation Plus </Nav.Link>
+                    <Nav.Link href="#action2"> Xbox Gamepass </Nav.Link>
 
-                    <NavDropdown title="Videojuegos" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#action3">Acción</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Aventura</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Shooters</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">RPG</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Simulación</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Deportes</NavDropdown.Item>
-                    </NavDropdown>
-
-                    <NavDropdown title="Plataformas" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#action3">Playstation</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Xbox</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Nintendo</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">PC</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Apple</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Android</NavDropdown.Item>
-                    </NavDropdown>
-
-                    <Nav.Link href="#action1">Contacto</Nav.Link>
                 </Nav>
 
                 <CardWidget />

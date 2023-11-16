@@ -1,14 +1,14 @@
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer"
-import { NavBar } from "./components/NavBar/NavBar"
+import { ItemListContainer as Home } from "./components/ItemListContainer/ItemListContainer"
+import { NavBar as Menu } from "./components/NavBar/NavBar"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   return (
     <>
-      <div>
-        <NavBar />
-        <ItemListContainer greeting= "Bienvenidos a Videoland Post" />
+      <div className="container">
+        <Menu />
+        <Home greeting= "Bienvenidos a Videoland Post" />
       </div>
     </>
   )
