@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="container">
         <Menu />
-        <Home greeting= "Bienvenidos a Videoland Post" />
+        <Home greeting= "Bienvenidos a la tienda de Videoland Post" />
       </div>
     </>
   )
