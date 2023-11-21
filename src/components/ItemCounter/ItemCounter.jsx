@@ -9,10 +9,11 @@ export const ItemCounter = ({ initial = 1, stock = 100, onAdd }) => {
 
   return (
     <div className="col-12 text-center mt-5">
-      <button className='btn btn-outline-dark' onClick={handleSumar}> + </button>
-      <label>{counter}</label>
-      <button className='btn btn-outline-dark' onClick={handleRestar}> - </button>
-      <button className='btn btn-outline-dark' onClick={handleOnAdd}> Agregar al carrito </button>
+
+      <button className='btn btn-outline-danger' onClick={handleRestar}> - </button>
+      <label style={{ padding: "10px", fontSize: "16px" }}>{counter}</label>
+      <button className='btn btn-outline-success' onClick={handleSumar}> + </button>
+      <button className='btn btn-outline-primary' style={{ marginLeft: "10px" }} onClick={handleOnAdd}> Agregar al carrito </button>
     </div>
   )
 }

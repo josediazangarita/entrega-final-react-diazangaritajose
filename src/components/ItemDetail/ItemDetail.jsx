@@ -1,6 +1,6 @@
 import { ItemCounter } from "../ItemCounter/ItemCounter"
 
-export const ItemDetail = ({ id, name, imgUrl, description, price, stock }) => {
+export const ItemDetail = ({ name, imgUrl, description, price, stock }) => {
     const onAdd = (cantidad) => {
         console.log(`La cantidad seleccionada es: ${cantidad}`)
         //Se agregará funcionalidad para agregar al carrito
