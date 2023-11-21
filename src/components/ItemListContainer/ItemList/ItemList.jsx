@@ -25,7 +25,7 @@ const productFiltered = ({ productos, filterState, handleFilterChange }) => (
         productos.map(product => <Item key={product.id} product={product} />)
         :
         productos
-          .filter(prod => prod.category.toLowerCase().includes(filterState))
+          .filter(prod => prod.name.toLowerCase().includes(filterState))
           .map(product => <Item key={product.id} product={product} />)
       }
     </div>
