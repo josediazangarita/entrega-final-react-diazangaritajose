@@ -1,10 +1,12 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ItemListContainer as Home } from "./components/ItemListContainer/ItemListContainer";
-import { NavBar as Menu } from "./components/NavBar/NavBar";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ItemCounter } from "./components/ItemCounter/ItemCounter";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { NavBar as Menu } from "./components/NavBar/NavBar";
 import FormularioContainer from "./components/FormularioContainer/FormularioContainer";
 import { CardWidget } from "./components/CartWidget/CardWidget";
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const onAdd = (cantidad) => {
