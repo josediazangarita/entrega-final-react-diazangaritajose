@@ -4,6 +4,7 @@ import { NavBar as Menu } from "./components/NavBar/NavBar";
 import { ItemCounter } from "./components/ItemCounter/ItemCounter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FormularioContainer from "./components/FormularioContainer/FormularioContainer";
+import { CardWidget } from "./components/CartWidget/CardWidget";
 
 function App() {
   const onAdd = (cantidad) => {
@@ -16,25 +17,31 @@ function App() {
         <Menu />
         <Routes>
           <Route path='/'
-            element={<Home greeting="Bienvenidos a la tienda de Videoland Post" />}
+            element={<Home />}
           />
-          {/* <Route path='/category/:id'
-            element={<ItemListContainer />}
-          /> */}
-          {/* <Route path='/item/:id'
-            element={<ItemDetailContainer />}
-          /> */}
-          <Route path='/formu'
-            element={<FormularioContainer />}
+          <Route path='/category'
+            element={<Home />}
           />
 
-          {/* <FormularioContainer /> */}
+          <Route path='/formulario'
+            element={<Home />}
+          />
+
+          <Route path='/detail'
+            element={<detail />}
+          />
+
+          <Route path='/CartWidget'
+            element={<CardWidget />}
+          />
 
           <Route path='*'
             element={<Navigate to='/' />}
           />
         </Routes>
         <ItemCounter initial={1} stock={100} onAdd={onAdd} />
+        <br />
+        <FormularioContainer />
       </div>
     </BrowserRouter>
   );

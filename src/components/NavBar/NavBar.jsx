@@ -13,10 +13,8 @@ export const NavBar = () => {
 
       <Navbar expand="lg" className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <Container fluid>
-          <Navbar.Brand >
-            {/* <Link to='/'> */}
-            Videoland Post
-            {/* </Link> */}
+          <Navbar.Brand>
+            <Link style={{ textDecoration: 'none', color: 'aliceblue' }} to='/'>Videoland Post</Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -25,12 +23,20 @@ export const NavBar = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll>
 
-              <Nav.Link href="#action1"> Playstation Plus </Nav.Link>
-              <Nav.Link href="#action2"> Xbox Gamepass </Nav.Link>
+
+              <Link className='btn' to='/category'>
+                <Nav.Link href="#action1">Playstation Plus</Nav.Link>
+              </Link>
+
+              <Link className='btn' to='/category'>
+                <Nav.Link href="#action2">Xbox Gamepass</Nav.Link>
+              </Link>
 
             </Nav>
 
-            <CardWidget />
+            <Link to='/CartWidget'>
+              <CardWidget />
+            </Link>
 
           </Navbar.Collapse>
         </Container>
