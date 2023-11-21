@@ -2,7 +2,7 @@ export const CardWidget = () => {
   return (
     <div>
       {
-        <button type="button" class="btn btn-primary">
+        <button type="button" className="btn btn-primary">
           {" "}
           4{" "}
           <svg
@@ -10,7 +10,7 @@ export const CardWidget = () => {
             width="24"
             height="24"
             fill="currentColor"
-            class="bi bi-cart4"
+            className="bi bi-cart4"
             viewBox="0 0 16 16"
           >
             {" "}

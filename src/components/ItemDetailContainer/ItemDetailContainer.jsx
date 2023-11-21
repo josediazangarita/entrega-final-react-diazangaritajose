@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react"
 import { mFetch } from './../../Helpers/mFetch';
+import { useParams } from "react-router-dom";
 
 
 export const ItemDetailContainer = () => {
     const [product, setproduct] = useState({})
+    const { pid } = useParams()
 
     useEffect(() => {
-        mFetch('1')
+        mFetch(pid)
             .then(res => setproduct(res))
             .catch(err => console.log('Error: ', err))
     }, [])
+
+    const onAdd = (cantidad) => {
+        console.log(`La cantidad seleccionada es: ${cantidad}`)
+    }
 
     return (
         <div classeName="row">

@@ -7,6 +7,7 @@ import { CardWidget } from "./components/CartWidget/CardWidget";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   const onAdd = (cantidad) => {
@@ -21,16 +22,12 @@ function App() {
           <Route path='/'
             element={<Home />}
           />
-          <Route path='/category'
+          <Route path='/category:cid'
             element={<Home />}
           />
 
-          <Route path='/formulario'
-            element={<Home />}
-          />
-
-          <Route path='/detail'
-            element={<detail />}
+          <Route path='/detail:pid'
+            element={<ItemDetailContainer />}
           />
 
           <Route path='/CartWidget'

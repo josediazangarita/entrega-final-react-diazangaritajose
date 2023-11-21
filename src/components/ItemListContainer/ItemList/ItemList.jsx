@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
 import { Filter } from "./Filter"
+import { Item } from "../Item/Item"
 
 const productFiltered = ({ productos, filterState, handleFilterChange }) => (
   <>
@@ -22,39 +22,11 @@ const productFiltered = ({ productos, filterState, handleFilterChange }) => (
     }}>
       {filterState === ""
         ?
-        productos.map(product => <div key={product.id} className="card w-25">
-          <div className="card-body p-0 text-center">
-            <img src={product.imgUrl} className="w-100" alt="Imagen de Tarjeta de Suscripción" />
-            <h5>{product.name}</h5>
-            <p>Precio:{product.precio}</p>
-            <p>Stock:{product.stock}</p>
-            <p>Descripción:{product.description}</p>
-          </div>
-          <div className="card-footer">
-            <button className="btn btn-outline-dark w-100">Detalle</button>
-          </div>
-        </div>
-        )
+        productos.map(product => <Item key={product.id} product={product} />)
         :
-
         productos
           .filter(prod => prod.name.toLowerCase().includes(filterState))
-          .map(product => <div key={product.id} className="card w-25">
-            <div className="card-body p-0 text-center">
-              <img src={product.imgUrl} className="w-100" alt="Imagen de Tarjeta de Suscripción" />
-              <h5>{product.name}</h5>
-              <p>Precio:{product.precio}</p>
-              <p>Stock:{product.stock}</p>
-              <p>Descripción:{product.description}</p>
-            </div>
-            <div className="card-footer">
-              <Link to='/detail'>
-                <button className="btn btn-outline-dark w-100">Detalle</button>
-              </Link>
-
-            </div>
-          </div>
-          )
+          .map(product => <Item key={product.id} product={product} />)
       }
     </div>
   </>
