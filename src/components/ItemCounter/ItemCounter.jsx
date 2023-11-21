@@ -8,7 +8,7 @@ export const ItemCounter = ({ initial = 1, stock = 100, onAdd }) => {
   }
 
   return (
-    <div className="w-25">
+    <div className="col-12 text-center mt-5">
       <button className='btn btn-outline-dark' onClick={handleSumar}> + </button>
       <label>{counter}</label>
       <button className='btn btn-outline-dark' onClick={handleRestar}> - </button>

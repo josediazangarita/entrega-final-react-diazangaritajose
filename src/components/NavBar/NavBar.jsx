@@ -24,12 +24,12 @@ export const NavBar = () => {
               navbarScroll>
 
 
-              <Link className='btn' to='/category'>
-                <Nav.Link href="#action1">Playstation Plus</Nav.Link>
+              <Link className='btn' to='/category/ps-plus'>
+                Playstation Plus
               </Link>
 
-              <Link className='btn' to='/category'>
-                <Nav.Link href="#action2">Xbox Gamepass</Nav.Link>
+              <Link className='btn' to='/category/xbox-gamepass'>
+                Xbox Gamepass
               </Link>
 
             </Nav>

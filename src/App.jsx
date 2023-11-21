@@ -1,4 +1,5 @@
 import { ItemListContainer as Home } from "./components/ItemListContainer/ItemListContainer";
+import { ItemListContainer as Category } from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { ItemCounter } from "./components/ItemCounter/ItemCounter";
@@ -8,6 +9,7 @@ import { CardWidget } from "./components/CartWidget/CardWidget";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ItemList } from "./components/ItemListContainer/ItemList/ItemList";
 
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
         <Menu />
         <Routes>
           <Route path='/' element={<Home greeting='Bienvenidos a la tienda de Videoland Post' />} />
-          <Route path='/category:cid' element={<Home />} />
+          <Route path='/category/:cid' element={<Category />} />
           <Route path='/detail/:pid' element={<ItemDetailContainer />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
