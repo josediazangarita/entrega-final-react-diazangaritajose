@@ -1,3 +1,4 @@
+import { ItemCounter } from "../ItemCounter/ItemCounter"
 
 export const ItemDetail = ({ id, name, imgUrl, description, price, stock }) => {
     const onAdd = (cantidad) => {
@@ -19,7 +20,7 @@ export const ItemDetail = ({ id, name, imgUrl, description, price, stock }) => {
                 <h4>Descripción: {description}</h4>
                 <h4>Precio: {price}</h4>
                 <h4>Stock: {stock}</h4>
-
+                <ItemCounter initial={1} stock={100} onAdd={onAdd} />
             </div>
         </div>
     )
