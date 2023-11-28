@@ -8,7 +8,7 @@ export const ItemListContainer = ({ greeting }) => {
   const { cid } = useParams(
 
   )
-  // Llamada a mi promesa mock de una API
+  //Llamada a mi promesa mock de una API
   useEffect(() => {
     if (cid) {
       mFetch()
@@ -20,6 +20,15 @@ export const ItemListContainer = ({ greeting }) => {
         .catch(err => console.log(err))
     }
   }, [cid])
+
+  // useEffect(() => {
+  //   const dbFirestore = getFirestore() // conecta con servicios de firestore
+
+  //   const qyeryDoc = doc(dbFirestire, 'products', 'ZMIbRgGXQ1WdomjcU9ex') // apuntando a un doc de firestore
+  //   getDoc(queryDoc)
+  //     .then(resultado => setProducto({ id: resultado.id, ...resultado.data() }))
+  //     .catch(err => console, log(err))
+  // }, [])
 
   // console.log(cid)
 
