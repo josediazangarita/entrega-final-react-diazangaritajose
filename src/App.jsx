@@ -10,6 +10,7 @@ import { CardWidget } from "./components/CartWidget/CardWidget";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemList } from "./components/ItemListContainer/ItemList/ItemList";
+import CartContainer from './components/CartContainer/CartContainer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/' element={<Home greeting='Bienvenidos a la tienda de Videoland Post' />} />
           <Route path='/category/:cid' element={<Category />} />
           <Route path='/detail/:pid' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={< CartContainer />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
         {/* <ItemCounter initial={1} stock={100} onAdd={onAdd} /> */}

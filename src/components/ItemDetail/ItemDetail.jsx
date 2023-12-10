@@ -1,3 +1,4 @@
+import Intercambiabilidad from "../Intercambiabilidad/Intercambiabilidad"
 import { ItemCounter } from "../ItemCounter/ItemCounter"
 
 export const ItemDetail = ({ name, imgUrl, description, price, stock }) => {
@@ -21,6 +22,7 @@ export const ItemDetail = ({ name, imgUrl, description, price, stock }) => {
                 <h4>Precio: {price}</h4>
                 <h4>Stock: {stock}</h4>
                 <ItemCounter initial={1} stock={100} onAdd={onAdd} />
+                <Intercambiabilidad />
             </div>
         </div>
     )
