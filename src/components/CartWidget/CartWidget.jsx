@@ -1,4 +1,5 @@
-export const CardWidget = () => {
+export const CartWidget = () => {
+
   return (
     <div>
       {
@@ -19,5 +20,6 @@ export const CardWidget = () => {
         </button>
       }
     </div>
+
   );
 };

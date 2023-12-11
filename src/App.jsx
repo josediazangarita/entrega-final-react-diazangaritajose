@@ -5,12 +5,13 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { ItemCounter } from "./components/ItemCounter/ItemCounter";
 import { NavBar as Menu } from "./components/NavBar/NavBar";
 import FormularioContainer from "./components/FormularioContainer/FormularioContainer";
-import { CardWidget } from "./components/CartWidget/CardWidget";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemList } from "./components/ItemListContainer/ItemList/ItemList";
-import CartContainer from './components/CartContainer/CartContainer';
+import CartContainer from "./components/CartContainer/CartContainer";
+
+
 
 
 function App() {

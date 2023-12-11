@@ -11,7 +11,7 @@ const InputCount = () => {
                     onClick={() => console.log('ir a cart')}
                 >Ir al Cart o Terminar compra</button>
             </Link>
-            <Link to='/' >
+            <Link to='/cart' >
                 <button
                     className="btn btn-outline-primary"
                     onClick={() => console.log('ir al home')}
