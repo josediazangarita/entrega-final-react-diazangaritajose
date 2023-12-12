@@ -9,7 +9,8 @@ import FormularioContainer from "./components/FormularioContainer/FormularioCont
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemList } from "./components/ItemListContainer/ItemList/ItemList";
-import CartContainer from "./components/CartContainer/CartContainer";
+import { CartContextProvider } from "./contexts/CartContext";
+import { CartContainer } from './components/CartContainer/CartContainer';
 
 
 
@@ -20,22 +21,25 @@ function App() {
   };
 
   return (
+
     <BrowserRouter>
-      <div className="container">
-        <Menu />
-        <Routes>
-          <Route path='/' element={<Home greeting='Bienvenidos a la tienda de Videoland Post' />} />
-          <Route path='/category/:cid' element={<Category />} />
-          <Route path='/detail/:pid' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={< CartContainer />} />
-          <Route path='*' element={<Navigate to='/' />} />
-        </Routes>
-        {/* <ItemCounter initial={1} stock={100} onAdd={onAdd} /> */}
-        <br />
-        {/* <FormularioContainer /> */}
-      </div>
+      <CartContextProvider>
+        <div className="container">
+          <Menu />
+          <Routes>
+            <Route path='/' element={<Home greeting='Bienvenidos a la tienda de Videoland Post' />} />
+            <Route path='/category/:cid' element={<Category />} />
+            <Route path='/detail/:pid' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={< CartContainer />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+          {/* <ItemCounter initial={1} stock={100} onAdd={onAdd} /> */}
+          <br />
+          {/* <FormularioContainer /> */}
+        </div>
+      </CartContextProvider>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;

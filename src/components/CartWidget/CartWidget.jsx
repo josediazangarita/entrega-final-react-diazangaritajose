@@ -5,7 +5,7 @@ export const CartWidget = () => {
       {
         <button type="button" className="btn btn-primary">
           {" "}
-          4{" "}
+          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

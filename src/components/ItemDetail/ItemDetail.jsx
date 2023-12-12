@@ -1,10 +1,15 @@
-import Intercambiabilidad from "../Intercambiabilidad/Intercambiabilidad"
-import { ItemCounter } from "../ItemCounter/ItemCounter"
+import { useContext } from "react"
+import { CartContext } from "../../contexts/CartContext"
 
-export const ItemDetail = ({ name, imgUrl, description, price, stock }) => {
+import { ItemCounter } from "../ItemCounter/ItemCounter"
+import Intercambiabilidad from "../Intercambiabilidad/Intercambiabilidad"
+
+export const ItemDetail = ({ product }) => {
+
+    const { addProduct } = useContext(CartContext)
+
     const onAdd = (cantidad) => {
-        console.log(`La cantidad seleccionada es: ${cantidad}`)
-        //Se agregará funcionalidad para agregar al carrito
+        addProduct({ ...product, cantidad })
     }
 
     return (
@@ -13,16 +18,16 @@ export const ItemDetail = ({ name, imgUrl, description, price, stock }) => {
                 <h1>Detalle del producto</h1>
             </div>
             <div className="col-12 text-center mt-5">
-                <img src={imgUrl} alt={name} className="img-fluid" />
-                <h2>{name}</h2>
+                <img src={product.imgUrl} alt={'imagen de tarjeta de suscripción'} className="img-fluid" />
+                <h2>{product.name}</h2>
             </div>
 
             <div className="col-12 text-center mt-5">
-                <h4>Descripción: {description}</h4>
-                <h4>Precio: {price}</h4>
-                <h4>Stock: {stock}</h4>
+                <h4>Descripción: {product.description}</h4>
+                <h4>Precio: {product.price}</h4>
+                <h4>Stock: {product.stock}</h4>
                 <ItemCounter initial={1} stock={100} onAdd={onAdd} />
-                <Intercambiabilidad />
+                {/* <Intercambiabilidad /> */}
             </div>
         </div>
     )
