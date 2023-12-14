@@ -10,7 +10,7 @@ export const CartContainer = () => {
     return (
         <div>
             {cartList.map(product => <div key={product.id}>
-                <img className="w-25" src={product.imgUrl} />
+                <img className="w-25" src={product.imgUrl} alt={'Product ${product.id}'} />
                 Cantidad: {product.cantidad} - Precio: {product.price} - Subtotal {product.price * product.cantidad}
                 <button className="btn btn-danger"> X </button>
             </div>
