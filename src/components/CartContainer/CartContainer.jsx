@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
+import FormularioContainer from "../FormularioContainer/FormularioContainer";
 
 export const CartContainer = () => {
     const { cartList, vaciarCarrito, getTotalQuantity, getTotalPrice, removeProductById } = useCartContext();
@@ -28,7 +29,7 @@ export const CartContainer = () => {
                         >
                             <img
                                 className="w-100 mb-2 img-fluid"
-                                style={{ maxWidth: "250px" }}
+                                style={{ maxHeight: "350px", maxWidth: "250px" }}
                                 src={product.imgUrl}
                                 alt={product.title}
                             />
@@ -59,6 +60,9 @@ export const CartContainer = () => {
                     <h5 className="font-weight-bold">
                         Precio total de productos: ${getTotalPrice().toFixed(2)}
                     </h5>
+                    <div>
+                        <FormularioContainer />
+                    </div>
                     <div className="button-container d-flex justify-content-center flex-wrap">
                         <button
                             className="btn btn-primary m-2"
@@ -83,4 +87,37 @@ export const CartContainer = () => {
             )}
         </div>
     );
-}          
+}
+
+
+
+
+// const handleOrder = () => {
+//     const order = {}
+//     order.buyer = { name: "José", phone: "2131313413", mail: "hshshshsh@gmail.com" }
+//     order.items = cartList.map(({ id, name, price }) => ({ id, name, price }))
+//     order.total = getTotalPrice()
+//     // console.log(order)
+
+//     //create
+//     // const db = getFirestore()
+//     // const orderCollection = collection(db, 'orders')
+
+//     // agregar validaciones
+//     // addDoc(orderCollection, order)
+//     //     .then(resp => console.log(resp))
+//     //     .catch(err => console.log(err))
+
+//     // update
+//     // const db = getFirestore()
+//     // const orderDoc = doc(db, 'products', 'pid')
+//     // updateDoc(orderDoc, {
+//     //     stock: 50
+//     // })
+//     //     .then(() => console.log('terminó la actualización'))
+//     //     .catch(err => console.log(err))
+
+
+//     // Lógica para finalizar la compra
+//     // setCheckoutMessage("¡Compra finalizada! Gracias por tu compra.");
+// };

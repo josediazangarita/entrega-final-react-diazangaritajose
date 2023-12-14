@@ -6,7 +6,7 @@ export const Item = memo(({ product }) => {
     return (
         <div className="card w-25">
             <div className="card-body p-0 text-center">
-                <img src={product.imgUrl} className="w-100" style={{ maxHeight: "400px" }} alt="Imagen de Tarjeta de Suscripción" />
+                <img src={product.imgUrl} className="w-100 mb-2 img-fluid" style={{ maxHeight: "350px", maxWidth: "250px" }} alt="Imagen de Tarjeta de Suscripción" />
                 <h5>{product.name}</h5>
                 <h6>Precio: {product.price}</h6>
                 <h6>Stock: {product.stock}</h6>
