@@ -1,18 +1,45 @@
 import React, { useState } from "react";
 import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
-import FormularioContainer from "../FormularioContainer/FormularioContainer";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export const CartContainer = () => {
-    const { cartList, vaciarCarrito, getTotalQuantity, getTotalPrice, removeProductById } = useCartContext();
-    console.log(cartList)
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+    });
 
-    const [checkoutMessage, setCheckoutMessage] = useState("");
+    const {
+        cartList,
+        vaciarCarrito,
+        getTotalQuantity,
+        getTotalPrice,
+        removeProductById,
+    } = useCartContext();
 
-    const handleCheckout = () => {
-        // Lógica para finalizar la compra
-        setCheckoutMessage("¡Compra finalizada! Gracias por tu compra.");
-    };
+    const handleOrder = async (evt) => {
+        evt.preventDefault();
+        const order = {
+            buyer: { name: formData.name, phone: formData.phone, mail: formData.email },
+            items: cartList.map(({ id, name, price }) => ({ id, name, price })),
+            total: getTotalPrice(),
+        };
+        console.log(order);
+
+        //create
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+
+        //agregar validaciones
+        addDoc(orderCollection, order)
+            .then(resp => console.log(resp))
+            .catch(err => console.log(err))
+    }
+
+
+    console.log(formData)
+
 
     return (
         <div className="container mt-5">
@@ -61,33 +88,63 @@ export const CartContainer = () => {
                         Precio total de productos: ${getTotalPrice().toFixed(2)}
                     </h5>
                     <div>
-                        <FormularioContainer />
+                        <form onSubmit={handleOrder}>
+                            <h5 style={{ marginTop: '25px', color: 'tomato' }}>Ingrese los datos para finalizar la compra</h5>
+                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                placeholder="Ingrese el nombre"
+                                onChange={(e) =>
+                                    setFormData({ ...formData, name: e.target.value })
+                                }
+                            />
+
+                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
+                                type="text"
+                                name="phone"
+                                value={formData.phone}
+                                placeholder="Ingrese el teléfono"
+                                onChange={(e) =>
+                                    setFormData({ ...formData, phone: e.target.value })
+                                }
+                            />
+
+                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
+                                type="text"
+                                name="email"
+                                value={formData.email}
+                                placeholder="ingrese el email"
+                                onChange={(e) =>
+                                    setFormData({ ...formData, email: e.target.value })
+                                }
+                            />
+                            <br />
+                            <button type="submit" className="btn btn-primary mt-2">
+                                Finalizar compra
+                            </button>
+                        </form>
+
                     </div>
-                    <div className="button-container d-flex justify-content-center flex-wrap">
-                        <button
-                            className="btn btn-primary m-2"
-                            onClick={handleCheckout}
-                        >
-                            Finalizar compra
-                        </button>
+                    <div className="button-container d-flex justify-content-center flex-wrap" style={{ marginTop: '50px' }}>
+                        <br />
                         <button
                             className="btn btn-danger m-2"
+                            style={{ width: '160px' }}
                             onClick={vaciarCarrito}
                         >
                             Vaciar carrito
                         </button>
-                        <Link to="/" className="btn btn-success m-2">
+                        <Link to="/" className="btn btn-success m-2" style={{ width: '160px' }}>
                             Seguir comprando
                         </Link>
                     </div>
-                    {checkoutMessage && (
-                        <h4 className="mt-3 alert alert-success">{checkoutMessage}</h4>
-                    )}
                 </div>
             )}
         </div>
     );
-}
+};
+
 
 
 
