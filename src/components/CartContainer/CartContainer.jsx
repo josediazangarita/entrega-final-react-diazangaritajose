@@ -1,9 +1,11 @@
+
 import { useCartContext } from "../../contexts/CartContext"
 
 
 
 export const CartContainer = () => {
     const { cartList, vaciarCarrito } = useCartContext()
+    console.log(cartList)
 
     return (
         <div>
