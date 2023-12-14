@@ -46,22 +46,22 @@ export const ItemDetail = ({ product }) => {
                 <h1>Detalle del producto</h1>
             </div>
             <div className="col-12 text-center mt-5">
-                <img src={producto.imgUrl} alt={'imagen de tarjeta de suscripción'} className="img-fluid" />
-                <h2>{producto.name}</h2>
+                <img src={producto.imgUrl} alt={'imagen de tarjeta de suscripción'} className="img-fluid" style={{ maxHeight: "400px" }} />
+                <h4>{producto.name}</h4>
             </div>
 
             <div className="col-12 text-center mt-5">
-                <h4>Descripción: {producto.description}</h4>
-                <h4>Precio: {producto.price}</h4>
-                <h4>Stock: {producto.stock}</h4>
+                <h5>Descripción: {producto.description}</h5>
+                <h5>Precio: {producto.price}</h5>
+                <h5>Stock: {producto.stock}</h5>
                 {
                     isCounter ?
                         <ItemCounter initial={1} stock={100} onAdd={onAdd} />
                         :
 
                         <>
-                            <Link className='btn btn-outline-dark ' to='/cart'>Terminar compra</Link>
-                            <Link className='btn btn-outline-dark ' to='/'>Seguir comprando</Link>
+                            <Link className='btn btn-danger' style={{ margin: "10px" }} to='/cart'>Terminar compra</Link>
+                            <Link className='btn btn-primary' style={{ margin: "10px" }} to='/'>Seguir comprando</Link>
                         </>
 
 
