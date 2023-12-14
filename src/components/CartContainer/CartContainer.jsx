@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { useCartContext } from "../../contexts/CartContext"
 
 
@@ -6,6 +7,13 @@ import { useCartContext } from "../../contexts/CartContext"
 export const CartContainer = () => {
     const { cartList, vaciarCarrito, getTotalQuantity, getTotalPrice, removeProductById } = useCartContext()
     console.log(cartList)
+
+    const [checkoutMessage, setCheckoutMessage] = useState("");
+
+    const handleCheckout = () => {
+        // Lógica para finalizar la compra
+        setCheckoutMessage("¡Compra finalizada! Gracias por tu compra.");
+    };
 
     return (
         <div>
@@ -38,9 +46,13 @@ export const CartContainer = () => {
                     <div>
                         Precio total de productos: ${getTotalPrice().toFixed(2)}
                     </div>
+                    <button className="btn btn-primary" onClick={handleCheckout}>
+                        Finalizar compra
+                    </button>
                     <button className="btn btn-danger" onClick={vaciarCarrito}>
                         Vaciar carrito
                     </button>
+                    {checkoutMessage && <p>{checkoutMessage}</p>}
                 </>
             )}
         </div>
