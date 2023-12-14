@@ -2,7 +2,6 @@
 import Loading from "../Loading/Loading"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { mFetch } from "../../Helpers/mFetch"
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { ItemList } from "./ItemList/ItemList"
 

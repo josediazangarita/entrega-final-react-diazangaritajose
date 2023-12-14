@@ -4,18 +4,45 @@ import { useCartContext } from "../../contexts/CartContext"
 
 
 export const CartContainer = () => {
-    const { cartList, vaciarCarrito } = useCartContext()
+    const { cartList, vaciarCarrito, getTotalQuantity, getTotalPrice, removeProductById } = useCartContext()
     console.log(cartList)
 
     return (
         <div>
-            {cartList.map(product => <div key={product.id}>
-                <img className="w-25" src={product.imgUrl} alt={'Product ${product.id}'} />
-                Cantidad: {product.cantidad} - Precio: {product.price} - Subtotal {product.price * product.cantidad}
-                <button className="btn btn-danger"> X </button>
-            </div>
+            {cartList.length === 0 ? (
+                <p>El carrito está vacío.</p>
+            ) : (
+                cartList.map((product) => (
+                    <div key={product.id}>
+                        <img
+                            className="w-25"
+                            src={product.imgUrl}
+                            alt={product.title}
+                        />
+                        Producto: {product.name} -Cantidad: {product.cantidad} - Precio: {product.price} - Subtotal{" "}
+                        {product.price * product.cantidad}
+                        <button
+                            className="btn btn-danger"
+                            onClick={() => removeProductById(product.id)}
+                        >
+                            X
+                        </button>
+                    </div>
+                ))
             )}
-            <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar carrito</button>
+            {cartList.length > 0 && (
+                <>
+                    <div>
+                        Cantidad total de productos: {getTotalQuantity()}
+                    </div>
+                    <div>
+                        Precio total de productos: ${getTotalPrice().toFixed(2)}
+                    </div>
+                    <button className="btn btn-danger" onClick={vaciarCarrito}>
+                        Vaciar carrito
+                    </button>
+                </>
+            )}
         </div>
-    )
-}
+    );
+};
