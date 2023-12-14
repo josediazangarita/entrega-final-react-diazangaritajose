@@ -16,27 +16,32 @@ export const CartContainer = () => {
     return (
         <div className="container mt-5">
             {cartList.length === 0 ? (
-                <h1 className="text-center" style={{ color: "red" }}>El carrito está vacío.</h1>
+                <h1 className="text-center" style={{ color: "red" }}>
+                    El carrito está vacío.
+                </h1>
             ) : (
                 <div className="d-flex flex-wrap justify-content-around">
                     {cartList.map((product) => (
                         <div
                             key={product.id}
-                            className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 p-3"
+                            className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 p-3 d-flex flex-column align-items-center"
                         >
                             <img
                                 className="w-100 mb-2 img-fluid"
-                                style={{ maxHeight: "400px" }}
+                                style={{ maxWidth: "250px" }}
                                 src={product.imgUrl}
                                 alt={product.title}
                             />
-                            <p className="text-center font-weight-bold">
+                            <div className="text-center font-weight-bold">
                                 <h5>Nombre: {product.name}</h5>
                                 <h6>Cantidad: {product.cantidad}</h6>
-                                <h6>Precio: {product.price} - Subtotal{" "} {product.price * product.cantidad}</h6>
-                            </p>
+                                <h6>
+                                    Precio: {product.price} - Subtotal{" "}
+                                    {product.price * product.cantidad}
+                                </h6>
+                            </div>
                             <button
-                                className="btn btn-danger mx-auto d-block"
+                                className="btn btn-danger mt-2"
                                 onClick={() => removeProductById(product.id)}
                             >
                                 Eliminar
@@ -54,14 +59,20 @@ export const CartContainer = () => {
                     <h5 className="font-weight-bold">
                         Precio total de productos: ${getTotalPrice().toFixed(2)}
                     </h5>
-                    <div className="button-container">
-                        <button className="btn btn-primary" style={{ margin: "10px" }} onClick={handleCheckout}>
+                    <div className="button-container d-flex justify-content-center flex-wrap">
+                        <button
+                            className="btn btn-primary m-2"
+                            onClick={handleCheckout}
+                        >
                             Finalizar compra
                         </button>
-                        <button className="btn btn-danger" style={{ margin: "10px" }} onClick={vaciarCarrito}>
+                        <button
+                            className="btn btn-danger m-2"
+                            onClick={vaciarCarrito}
+                        >
                             Vaciar carrito
                         </button>
-                        <Link to="/" className="btn btn-success mt-2" style={{ margin: "10px" }}>
+                        <Link to="/" className="btn btn-success m-2">
                             Seguir comprando
                         </Link>
                     </div>
@@ -72,5 +83,4 @@ export const CartContainer = () => {
             )}
         </div>
     );
-};
-
+}          

@@ -156,15 +156,13 @@ export const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <div style={{ margin: "25px" }}>
-        <h2 className="text-center"> {greeting} </h2>
-        {
-          loading ?
-            <Loading />
-            :
-
-            <ItemList productos={productos} />
-        }
+      <div className="m-4">
+        <h2 className="text-center">{greeting}</h2>
+        {loading ? (
+          <Loading />
+        ) : (
+          <ItemList productos={productos} />
+        )}
       </div>
     </div>
   )

@@ -4,7 +4,6 @@ import { useCartContext } from "../../contexts/CartContext"
 import { ItemCounter } from "../ItemCounter/ItemCounter"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
-import Intercambiabilidad from "../Intercambiabilidad/Intercambiabilidad"
 import { Link, useParams } from "react-router-dom"
 
 
