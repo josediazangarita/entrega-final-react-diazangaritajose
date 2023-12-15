@@ -34,7 +34,6 @@ function App() {
           </Routes>
           {/* <ItemCounter initial={1} stock={100} onAdd={onAdd} /> */}
           <br />
-          {/* <FormularioContainer /> */}
         </div>
       </CartContextProvider>
     </BrowserRouter>

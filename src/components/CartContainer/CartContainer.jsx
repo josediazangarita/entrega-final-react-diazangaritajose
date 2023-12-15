@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { formWhitValidation } from './../FormularioContainer/formWhitValidation';
+import { Form } from "../FormularioContainer/Form";
+
+const FormWhitValidation = formWhitValidation(Form);
 
 export const CartContainer = () => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
+        confirmEmail: '',
     });
 
     const {
@@ -37,6 +42,15 @@ export const CartContainer = () => {
             .catch(err => console.log(err))
     }
 
+    const handleOnChange = (evt) => {
+        //console.log(evt.target.name)
+        //console.log(evt.target.value)
+
+        setFormData({
+            ...formData,
+            [evt.target.name]: evt.target.value,
+        });
+    };
 
     console.log(formData)
 
@@ -87,7 +101,14 @@ export const CartContainer = () => {
                     <h5 className="font-weight-bold">
                         Precio total de productos: ${getTotalPrice().toFixed(2)}
                     </h5>
-                    <div>
+
+                    <FormWhitValidation
+                        formData={formData}
+                        handleOnChange={handleOnChange}
+                        handleOrder={handleOrder}
+                    />
+
+                    {/* <div>
                         <form onSubmit={handleOrder}>
                             <h5 style={{ marginTop: '25px', color: 'tomato' }}>Ingrese los datos para finalizar la compra</h5>
                             <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
@@ -125,7 +146,7 @@ export const CartContainer = () => {
                             </button>
                         </form>
 
-                    </div>
+                    </div> */}
                     <div className="button-container d-flex justify-content-center flex-wrap" style={{ marginTop: '50px' }}>
                         <br />
                         <button
