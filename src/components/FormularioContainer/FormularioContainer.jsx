@@ -12,9 +12,6 @@ const FormularioContainer = () => {
   });
 
   const handleOnChange = (evt) => {
-    //console.log(evt.target.name)
-    //console.log(evt.target.value)
-
     setFormData({
       ...formData,
       [evt.target.name]: evt.target.value,

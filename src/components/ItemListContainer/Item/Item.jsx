@@ -2,7 +2,7 @@ import { memo } from "react"
 import { Link } from "react-router-dom"
 
 export const Item = memo(({ product }) => {
-    console.log("Renderizando item")
+
     return (
         <div className="card w-25">
             <div className="card-body p-0 text-center">

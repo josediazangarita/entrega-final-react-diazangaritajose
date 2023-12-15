@@ -33,13 +33,6 @@ export const formWhitValidation = (FormWrappedComponent) => {
         isValid = false;
       }
 
-      console.log(props)
-
-      // if (!props.formData.email & confirmEmail & !props.formData.email === confirmEmail) {
-      //   newErrors.matchEmail = "El campo email no coincide";
-      //   isValid = false;
-      // }
-
       setErrors(newErrors);
       return isValid;
     }

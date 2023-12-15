@@ -26,14 +26,6 @@ export const CartContextProvider = ({ children }) => {
         }
     };
 
-
-    // const addProduct = (product) => {
-    //     setCartList([
-    //         ...cartList,
-    //         product
-    //     ])
-    // }
-
     const vaciarCarrito = () => {
         setCartList([])
     }

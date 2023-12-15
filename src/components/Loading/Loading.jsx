@@ -4,15 +4,13 @@ import { ClipLoader } from 'react-spinners';
 
 const Loading = () => {
     useEffect(() => {
-        return () => {
-            console.log('Desmontando Loading');
-        };
+        return () => { };
     }, []);
 
     const override = css`
         display: block;
         margin: 0 auto;
-        border-color: dark; /* Puedes personalizar el color según tus preferencias */
+        border-color: dark;
     `;
 
     return (
@@ -25,31 +23,3 @@ const Loading = () => {
 };
 
 export default Loading;
-
-
-
-
-
-
-
-
-
-
-
-// import { useEffect } from "react"
-
-// //Componente de renderizado
-// const Loading = () => {
-//     useEffect(() => {
-//         return () => {
-//             console.log('desmontando loading')
-//         }
-
-//     })
-
-//     return (
-//         <h2>Cargando...</h2>
-//     )
-// }
-
-// export default Loading

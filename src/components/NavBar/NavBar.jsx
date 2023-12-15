@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -12,7 +11,6 @@ import { CartWidget } from '../CartWidget/CartWidget';
 export const NavBar = () => {
   return (
     <div>
-
       <Navbar expand="lg" className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <Container fluid>
           <Navbar.Brand>

@@ -30,30 +30,21 @@ export const CartContainer = () => {
             items: cartList.map(({ id, name, price }) => ({ id, name, price })),
             total: getTotalPrice(),
         };
-        console.log(order);
 
-        //create
         const db = getFirestore()
         const orderCollection = collection(db, 'orders')
 
-        //agregar validaciones
         addDoc(orderCollection, order)
             .then(resp => console.log(resp))
             .catch(err => console.log(err))
     }
 
     const handleOnChange = (evt) => {
-        //console.log(evt.target.name)
-        //console.log(evt.target.value)
-
         setFormData({
             ...formData,
             [evt.target.name]: evt.target.value,
         });
     };
-
-    console.log(formData)
-
 
     return (
         <div className="container mt-5">
@@ -107,46 +98,6 @@ export const CartContainer = () => {
                         handleOnChange={handleOnChange}
                         handleOrder={handleOrder}
                     />
-
-                    {/* <div>
-                        <form onSubmit={handleOrder}>
-                            <h5 style={{ marginTop: '25px', color: 'tomato' }}>Ingrese los datos para finalizar la compra</h5>
-                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                placeholder="Ingrese el nombre"
-                                onChange={(e) =>
-                                    setFormData({ ...formData, name: e.target.value })
-                                }
-                            />
-
-                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
-                                type="text"
-                                name="phone"
-                                value={formData.phone}
-                                placeholder="Ingrese el teléfono"
-                                onChange={(e) =>
-                                    setFormData({ ...formData, phone: e.target.value })
-                                }
-                            />
-
-                            <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
-                                type="text"
-                                name="email"
-                                value={formData.email}
-                                placeholder="ingrese el email"
-                                onChange={(e) =>
-                                    setFormData({ ...formData, email: e.target.value })
-                                }
-                            />
-                            <br />
-                            <button type="submit" className="btn btn-primary mt-2">
-                                Finalizar compra
-                            </button>
-                        </form>
-
-                    </div> */}
                     <div className="button-container d-flex justify-content-center flex-wrap" style={{ marginTop: '50px' }}>
                         <br />
                         <button
@@ -165,37 +116,3 @@ export const CartContainer = () => {
         </div>
     );
 };
-
-
-
-
-
-// const handleOrder = () => {
-//     const order = {}
-//     order.buyer = { name: "José", phone: "2131313413", mail: "hshshshsh@gmail.com" }
-//     order.items = cartList.map(({ id, name, price }) => ({ id, name, price }))
-//     order.total = getTotalPrice()
-//     // console.log(order)
-
-//     //create
-//     // const db = getFirestore()
-//     // const orderCollection = collection(db, 'orders')
-
-//     // agregar validaciones
-//     // addDoc(orderCollection, order)
-//     //     .then(resp => console.log(resp))
-//     //     .catch(err => console.log(err))
-
-//     // update
-//     // const db = getFirestore()
-//     // const orderDoc = doc(db, 'products', 'pid')
-//     // updateDoc(orderDoc, {
-//     //     stock: 50
-//     // })
-//     //     .then(() => console.log('terminó la actualización'))
-//     //     .catch(err => console.log(err))
-
-
-//     // Lógica para finalizar la compra
-//     // setCheckoutMessage("¡Compra finalizada! Gracias por tu compra.");
-// };

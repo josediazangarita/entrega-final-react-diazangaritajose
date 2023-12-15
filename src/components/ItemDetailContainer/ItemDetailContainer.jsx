@@ -10,17 +10,6 @@ export const ItemDetailContainer = () => {
     const [isLoading, setIsLoading] = useState(true)
     const { pid } = useParams()
 
-
-    //Llamada a la API dentro de un useEffect
-    // useEffect(() => {
-    //     mFetch(pid)
-    //         .then(res => setproduct(res))
-    //         .catch(err => console.log('Error: ', err))
-    //         .finally(() => setIsLoading(false))
-    // }, [pid])
-
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -35,30 +24,6 @@ export const ItemDetailContainer = () => {
 
         fetchData();
     }, [pid]);
-
-
-
-    // useEffect(() => {
-    //     const fetchProduct = async () => {
-    //         try {
-    //             const dbFirestore = getFirestore();
-    //             const queryDoc = doc(dbFirestore, 'products', pid);
-    //             const productDoc = await getDoc(queryDoc);
-
-    //             if (productDoc.exists()) {
-    //                 setProduct({ id: productDoc.id, ...productDoc.data() });
-    //             } else {
-    //                 console.log('El producto no existe');
-    //             }
-    //         } catch (error) {
-    //             console.error('Error al obtener el producto:', error);
-    //         } finally {
-    //             setIsLoading(false);
-    //         }
-    //     };
-
-    //     fetchProduct();
-    // }, [pid]);
 
     return (
         <>

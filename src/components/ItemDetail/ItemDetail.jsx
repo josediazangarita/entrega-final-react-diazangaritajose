@@ -35,9 +35,8 @@ export const ItemDetail = ({ product }) => {
             .then(resultado => setProducto({ id: resultado.id, ...resultado.data() }))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
-    }, [])
+    }, [pid])
 
-    console.log(producto)
 
     return (
         <div className="row">
@@ -65,8 +64,6 @@ export const ItemDetail = ({ product }) => {
 
 
                 }
-
-                {/* <Intercambiabilidad /> */}
             </div>
         </div>
     )
