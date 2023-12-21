@@ -14,9 +14,6 @@ import { CartContainer } from './components/CartContainer/CartContainer';
 
 
 function App() {
-  const onAdd = (cantidad) => {
-  };
-
   return (
 
     <BrowserRouter>

@@ -73,11 +73,18 @@ export const CartContainer = () => {
             ) : (
                 <div>
                     {cartList.length === 0 ? (
-                        <div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <br />
                             <h2 className="text-center" style={{ color: "red" }}>
                                 El carrito está vacío.
                             </h2>
+                            <br />
+                            <br />
+                            <img
+                                src="public\assets\carrito-vacio.png"
+                                alt="imagen de carrito de compras vacío"
+                                style={{ height: "250px", width: '250px' }}
+                            />
                             <br />
                             <div className="text-center mt-3">
                                 <Link to="/" className="btn btn-success m-2" style={{ width: '160px' }}>
