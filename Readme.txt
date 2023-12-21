@@ -1,4 +1,4 @@
-Entrega proyecto final detalles
+Entrega proyecto final:
 
 Consigna:
     - Desarrollar una app de un e-commerce para vender productos de un rubro a elección.
