@@ -49,9 +49,18 @@ export const CartContainer = () => {
     return (
         <div className="container mt-5">
             {cartList.length === 0 ? (
-                <h1 className="text-center" style={{ color: "red" }}>
-                    El carrito está vacío.
-                </h1>
+                <div>
+                    <br />
+                    <h2 className="text-center" style={{ color: "red" }}>
+                        El carrito está vacío.
+                    </h2>
+                    <br />
+                    <div className="text-center mt-3">
+                        <Link to="/" className="btn btn-success m-2" style={{ width: '160px' }}>
+                            Seguir comprando
+                        </Link>
+                    </div>
+                </div>
             ) : (
                 <div className="d-flex flex-wrap justify-content-around">
                     {cartList.map((product) => (
