@@ -10,7 +10,7 @@ export const Form = ({ formData, handleOnChange, errors, validateForm, handleOrd
     return (
         <div style={{ border: "3px solid gray", borderRadius: '10px' }}>
             <form onSubmit={handleOnSubmit}>
-                <h5 style={{ marginTop: '25px', color: 'tomato' }}>Ingrese los datos para finalizar la compra</h5>
+                <h5 style={{ marginTop: '10px', color: 'blue' }}>Ingrese los datos para finalizar la compra</h5>
                 <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
                     type="text"
                     name="name"
@@ -22,7 +22,6 @@ export const Form = ({ formData, handleOnChange, errors, validateForm, handleOrd
                 <br />
                 {errors && errors.name && <span> {errors.name}</span>}
                 <br />
-
                 <input style={{ textAlign: 'center', margin: '10px', borderColor: 'black', borderRadius: '7px' }}
                     type="text"
                     name="phone"
@@ -62,7 +61,6 @@ export const Form = ({ formData, handleOnChange, errors, validateForm, handleOrd
                 <button type="submit" className="btn btn-primary mt-2 mb-2">
                     Finalizar compra
                 </button>
-
             </form>
         </div>
     )
