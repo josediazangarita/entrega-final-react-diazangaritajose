@@ -29,7 +29,7 @@ const OrderDetails = () => {
                     <strong>Total: ${getTotalPrice().toFixed(2)}</strong>
                     <br />
                     <img
-                        src="public\assets\codigo-barras.png"
+                        src="dist\assets\codigo-barras.png"
                         alt="imagen código de barras"
                         className="img-fluid"
                         style={{ maxHeight: "100px" }}

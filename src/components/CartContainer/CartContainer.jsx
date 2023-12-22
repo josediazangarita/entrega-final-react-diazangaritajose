@@ -82,7 +82,7 @@ export const CartContainer = () => {
                             <br />
                             <br />
                             <img
-                                src="public\assets\carrito-vacio.png"
+                                src="dist\assets\carrito-vacio.png"
                                 alt="imagen de carrito de compras vacío"
                                 style={{ height: "250px", width: '250px' }}
                             />
