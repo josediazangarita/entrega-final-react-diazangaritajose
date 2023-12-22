@@ -3,7 +3,6 @@ export const Form = ({ formData, handleOnChange, errors, validateForm, handleOrd
     const handleOnSubmit = (evt) => {
         evt.preventDefault()
         if (validateForm()) {
-            console.log("enviando", formData)
             handleOrder(evt)
         }
     }

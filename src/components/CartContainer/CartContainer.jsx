@@ -1,10 +1,11 @@
 
 import { useState } from "react";
-import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { formWhitValidation } from './../FormularioContainer/formWhitValidation';
+
 import { Form } from "../FormularioContainer/Form";
+import { formWhitValidation } from './../FormularioContainer/formWhitValidation';
+import { useCartContext } from "../../contexts/CartContext";
 import OrderDetails from "../OrderDetails/OrderDetails";
 
 const FormWhitValidation = formWhitValidation(Form);

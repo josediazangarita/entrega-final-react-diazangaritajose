@@ -37,7 +37,6 @@ export const formWhitValidation = (FormWrappedComponent) => {
       return isValid;
     }
 
-
     return (
       <FormWrappedComponent
         {...props}

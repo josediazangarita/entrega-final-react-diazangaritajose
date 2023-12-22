@@ -1,21 +1,16 @@
-import { ItemListContainer as Home } from "./components/ItemListContainer/ItemListContainer";
-import { ItemListContainer as Category } from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+
+import { ItemListContainer as Home } from "./components/ItemListContainer/ItemListContainer";
 import { NavBar as Menu } from "./components/NavBar/NavBar";
-
-
-import "bootstrap/dist/css/bootstrap.min.css";
+import { ItemListContainer as Category } from "./components/ItemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartContextProvider } from "./contexts/CartContext";
 import { CartContainer } from './components/CartContainer/CartContainer';
 
-
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-
     <BrowserRouter>
       <CartContextProvider>
         <div className="container">
@@ -33,5 +28,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App;

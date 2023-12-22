@@ -1,15 +1,13 @@
+import { Link } from "react-router-dom";
 
 import { useCartContext } from "../../contexts/CartContext";
-import { Link } from "react-router-dom";
 
 const OrderDetails = () => {
     const { cartList, getTotalPrice, vaciarCarrito } = useCartContext();
-
     const renderOrderDetails = () => {
         // Obtener la fecha y hora del momento de la generación de la orden de compra
         const currentDate = new Date().toLocaleDateString();
         const currentTime = new Date().toLocaleTimeString();
-
         const handleContinueShopping = () => {
             vaciarCarrito();
         };

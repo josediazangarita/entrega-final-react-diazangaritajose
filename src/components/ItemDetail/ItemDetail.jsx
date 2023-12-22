@@ -1,42 +1,33 @@
 
 import { useEffect, useState } from "react"
-import { useCartContext } from "../../contexts/CartContext"
-import { ItemCounter } from "../ItemCounter/ItemCounter"
+import { Link, useParams } from "react-router-dom"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
-import { Link, useParams } from "react-router-dom"
-
+import { useCartContext } from "../../contexts/CartContext"
+import { ItemCounter } from "../ItemCounter/ItemCounter"
 
 export const ItemDetail = ({ product }) => {
 
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
-
     const [isCounter, setIsCounter] = useState(true)
-
     const { addProduct } = useCartContext()
-
     const onAdd = (cantidad) => {
         addProduct({ ...product, cantidad })
         setIsCounter(false)
     }
 
-    const { pid } = useParams(
-
-    )
+    const { pid } = useParams()
 
     // Acceder a un documento firebase
     useEffect(() => {
         const dbFirestore = getFirestore() // conecta con servicios de firestore
-
         const queryDoc = doc(dbFirestore, 'products', pid) // apuntando a un doc de firestore
-
         getDoc(queryDoc)
             .then(resultado => setProducto({ id: resultado.id, ...resultado.data() }))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
     }, [pid])
-
 
     return (
         <div className="row">
@@ -61,8 +52,6 @@ export const ItemDetail = ({ product }) => {
                             <Link className='btn btn-danger' style={{ margin: "10px" }} to='/cart'>Terminar compra</Link>
                             <Link className='btn btn-primary' style={{ margin: "10px" }} to='/'>Seguir comprando</Link>
                         </>
-
-
                 }
             </div>
         </div>

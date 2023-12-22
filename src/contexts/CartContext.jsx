@@ -6,8 +6,6 @@ export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
-
-
     const addProduct = (product) => {
         const existingProduct = cartList.find((p) => p.id === product.id);
 
@@ -30,12 +28,12 @@ export const CartContextProvider = ({ children }) => {
         setCartList([])
     }
 
-    // cantidad total de productos
+    // Cantidad total de productos
     const getTotalQuantity = () => {
         return cartList.reduce((total, product) => total + product.cantidad, 0);
     };
 
-    // precio total de productos
+    // Precio total de productos
     const getTotalPrice = () => {
         return cartList.reduce(
             (total, product) => total + product.price * product.cantidad,
@@ -43,7 +41,7 @@ export const CartContextProvider = ({ children }) => {
         );
     };
 
-    // eliminar un producto por id
+    // Eliminar un producto por id
     const removeProductById = (productId) => {
         setCartList((prevCartList) =>
             prevCartList.filter((product) => product.id !== productId)

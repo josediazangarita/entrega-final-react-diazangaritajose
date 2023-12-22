@@ -1,6 +1,7 @@
+import { memo } from "react"
+
 import { Filter } from "./Filter"
 import { Item } from "../Item/Item"
-import { memo } from "react"
 
 const productFiltered = ({ productos, filterState, handleFilterChange }) => (
   <>
@@ -33,9 +34,7 @@ const productFiltered = ({ productos, filterState, handleFilterChange }) => (
   </>
 )
 
-
 export const ItemList = memo(({ productos }) => {
-  console.log("Renderizando ItemList")
   return (
     <Filter productos={productos}>
       {productFiltered}

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { CartWidget } from '../CartWidget/CartWidget';
 
+import { CartWidget } from '../CartWidget/CartWidget';
 
 export const NavBar = () => {
   return (
@@ -38,8 +38,6 @@ export const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-
     </div>
   )
 }

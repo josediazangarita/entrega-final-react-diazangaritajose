@@ -1,10 +1,10 @@
 
-import Loading from "../Loading/Loading"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
-import { ItemList } from "./ItemList/ItemList"
 
+import Loading from "../Loading/Loading"
+import { ItemList } from "./ItemList/ItemList"
 
 export const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([])
