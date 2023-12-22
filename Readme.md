@@ -1,62 +1,73 @@
-#Nombre del proyecto:
-##Ecommerce de Videoland Post
+# Nombre del proyecto:
 
-DEMO deployed en Netlify:
+## Ecommerce de Videoland Post
 
-Dependencias utilizadas:
+# Visión del proyecto:
 
-| Dependencia      | Versión |
-| ---------------- | ------- |
-| @emotion/react   | 11.11.1 |
-| @emotion/styled  | 11.11.0 |
-| Bootstrap        | 5.3.2   |
-| Firebase         | 10.7.1  |
-| React            | 18.2.0  |
-| React Router DOM | 6.19.0  |
-| React-bootstrap  | 2.0.1   |
-| React-DOM        | 18.2.0  |
-| React Spinners   | 0.13.8  |
+< Se desarrolla una app tipo Ecommerce orientada a la venta de tarjetas de suscripción
+< de las diferentes plataformas de videojuegos (PS plus, Xbox Gamepass, etc).
+< Luego de finalizada se integrará este proyecto al nuevo desarrollo web de Videoland Post,
+< manteniendo su identidad visual y estilos CSS pero desarrollado 100% con React.
 
-##Entrega proyecto final:
+# DEMO deployed en Netlify:
 
-###Consigna: - Desarrollar una app de un e-commerce para vender productos de un rubro a elección.
+## Dependencias:
 
-###Componentes:
--Navbar
--Catálogo
--Detalle del producto
--CartContext
--CartWidget
+| Dependencia      | Versión | Descripción                  |
+| ---------------- | ------- | ---------------------------- |
+| React            | 18.2.0  | Se usó como base de datos    |
+| React Router DOM | 6.19.0  | Agregar enrutado para la app |
+| React-bootstrap  | 2.0.1   | Se usó como base de datos    |
+| React-DOM        | 18.2.0  | Se usó como base de datos    |
+| React Spinners   | 0.13.8  | Se usó como base de datos    |
+| @emotion/react   | 11.11.1 | Se usó como base de datos    |
+| @emotion/styled  | 11.11.0 | Se usó como base de datos    |
+| Bootstrap        | 5.3.2   | Se usó como base de datos    |
+| Firebase         | 10.7.1  | Se usó como base de datos    |
 
-###Se debe entregar:
--Navbar
--CartWidget
--ItemListContainer
--ItemList
--ItemDetailContainer
--ItemDetailContainer
--ItemQuantitySelector
--Description
--AddItemButton
--Checkout
--Brief (detalle de compra)
+## Dependencias de desarrollo:
 
-###Optimizar nuestro código para la entrega final
+| Dev Dependencia             | Versión |
+| --------------------------- | ------- |
+| Vite                        | 4.4.5   |
+| eslint-plugin-react-refresh | 0.4.3   |
+| eslint-plugin-react-hooks   | 4.6.0   |
+| eslint-plugin-react         | 7.32.2  |
+| eslint                      | 8.45.0  |
+| @vitejs/plugin-react        | 4.0.3   |
+| @types/react-dom            | 18.2.7  |
+| @types/react                | 18.2.15 |
 
-    1- no repetir cód.
+### Componentes del proyecto:
 
-    2- no mezclar idiomas en el cód.
+    - Navbar
+    - CartContainer
+    - CartWidget
+    - ItemListContainer
+    - ItemList
+    - Item
+    - Filter
+    - ItemDetailContainer
+    - ItemDetail
+    - ItemCounter
+    - FormularioContainer
+    - FormularioWhithValidation
+    - Form
+    - OrderDetails
+    - CartContext
+    - Loading
+    - ConfigFirebase
 
-    3- no al cód comentado.
+Derechos reservados Videoland Post 2.023 - 2.024
 
-    4- eliminar todos los console.log (menos los de los errores)
+Desarrollador: Díaz Angarita José
 
-    5- Eliminar todo lo que no necesitemos -> mock el fetch - promises fuinciones que no usemos
+(videolandpost.com)
 
-    6- identar bien el cód.
+Que debe tener:
 
-    7- no debe haber variables o estados declarados nunca usados
-
-    8- Eliminar importaciones declaradas nunca usadas
-
-    9- diseño modular- cada función - en sus archivos bien separadas las responsabilidades
+Librerías instaladas con versiones y breve descripción
+Objetivos
+Breve descripción para el demo
+Captura de pantalla de las vistas de la app
+Entrega del deploy (link del deploy)
