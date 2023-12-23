@@ -49,15 +49,16 @@
 ### Objetivos
 
 > App interactiva para gestión de compras de tarjetas de suscripción de plataformas de videojuegos para una página web de videojuegos que incluya:
-> Vista general con las tarjetas de suscripción a la venta.
-> Filtrado de las tarjetas de suscripción según la plataforma de videojuegos.
-> Vista con detalle de la tarjeta de suscripción seleccionada y que se pueda seleccionar un número determinado a comprar para ser agregadas a un carrito de compras.
-> Carrito de compra con los items seleccionados con la opción de eliminar items, vaciar carrito, seguir comprando o finalizar la compra.
-> Generacióm de una orden de compra enlazada con una base de datos que guarde dicho número de orden con los detalles de la misma.
+
+- Vista general con las tarjetas de suscripción a la venta.
+- Filtrado de las tarjetas de suscripción según la plataforma de videojuegos.
+- Vista con detalle de la tarjeta de suscripción seleccionada y que se pueda seleccionar un número determinado a comprar para ser agregadas a un carrito de compras.
+- Carrito de compra con los items seleccionados con la opción de eliminar items, vaciar carrito, seguir comprando o finalizar la compra.
+- Generacióm de una orden de compra enlazada con una base de datos que guarde dicho número de orden con los detalles de la misma.
 
 ### Vistas de la app
 
-- Pantalla de inicio: (https://i.ibb.co/stNVLSw/pantalla-Inicio.jpg)
+- Pantalla de inicio: [![Pantalla de inicio](https://i.ibb.co/stNVLSw/pantalla-Inicio.jpg)](https://i.ibb.co/stNVLSw/pantalla-Inicio.jpg)
 - Detalle del producto: (https://i.ibb.co/qxC2pM7/detalle-Producto.jpg)
 - Carrito de compras: (https://i.ibb.co/QFx9q7k/carrito-Compras.jpg)
 - Carrito vacío: (https://i.ibb.co/XXwhfW1/carrito-Vacio.jpg)
