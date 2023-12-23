@@ -5,15 +5,15 @@ import codigoBarras from '../../../public/assets/codigo-barras.png'
 
 const OrderDetails = () => {
     const { cartList, getTotalPrice, vaciarCarrito } = useCartContext();
-    const renderOrderDetails = () => {
-        // Obtener la fecha y hora del momento de la generación de la orden de compra
-        const currentDate = new Date().toLocaleDateString();
-        const currentTime = new Date().toLocaleTimeString();
-        const handleContinueShopping = () => {
-            vaciarCarrito();
-        };
+    // Obtener la fecha y hora del momento de la generación de la orden de compra
+    const currentDate = new Date().toLocaleDateString();
+    const currentTime = new Date().toLocaleTimeString();
+    const handleContinueShopping = () => {
+        vaciarCarrito();
+    };
 
-        return (
+    return (
+        <div className="container mt-5">
             <div className="card">
                 <div className="card-body" style={{ textAlign: 'center' }}>
                     <h5 className="card-title">Recibo de compra</h5>
@@ -42,12 +42,6 @@ const OrderDetails = () => {
                     </Link>
                 </div>
             </div>
-        );
-    };
-
-    return (
-        <div className="container mt-5">
-            {renderOrderDetails()}
         </div>
     );
 };
