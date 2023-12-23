@@ -28,23 +28,23 @@
 
 ### Componentes del proyecto:
 
-> Navbar
-> CartContainer
-> CartWidget
-> ItemListContainer
-> ItemList
-> Item
-> Filter
-> ItemDetailContainer
-> ItemDetail
-> ItemCounter
-> FormularioContainer
-> FormularioWhithValidation
-> Form
-> OrderDetails
-> CartContext
-> Loading
-> ConfigFirebase
+- Navbar
+- CartContainer
+- CartWidget
+- ItemListContainer
+- ItemList
+- Item
+- Filter
+- ItemDetailContainer
+- ItemDetail
+- ItemCounter
+- FormularioContainer
+- FormularioWhithValidation
+- Form
+- OrderDetails
+- CartContext
+- Loading
+- ConfigFirebase
 
 ### Objetivos
 
@@ -57,14 +57,14 @@
 
 ### Vistas de la app
 
-[Pantalla de inicio]: (https://i.ibb.co/stNVLSw/pantalla-Inicio.jpg)
-[Detalle del producto]: (https://i.ibb.co/qxC2pM7/detalle-Producto.jpg)
-[Carrito de compras]: (https://i.ibb.co/QFx9q7k/carrito-Compras.jpg)
-[Carrito vacío]: (https://i.ibb.co/XXwhfW1/carrito-Vacio.jpg)
-[Orden de compra]: (https://i.ibb.co/t4270h9/orden-Compra.jpg)
+- Pantalla de inicio: (https://i.ibb.co/stNVLSw/pantalla-Inicio.jpg)
+- Detalle del producto: (https://i.ibb.co/qxC2pM7/detalle-Producto.jpg)
+- Carrito de compras: (https://i.ibb.co/QFx9q7k/carrito-Compras.jpg)
+- Carrito vacío: (https://i.ibb.co/XXwhfW1/carrito-Vacio.jpg)
+- Orden de compra: (https://i.ibb.co/t4270h9/orden-Compra.jpg)
 
 **Derechos reservados Videoland Post 2.023 - 2.024**
 
 **Desarrollador: Díaz Angarita José**
 
-[Videoland Post]: (www.videolandpost.com)
+Videoland Post: (www.videolandpost.com)
