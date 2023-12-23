@@ -7,6 +7,8 @@ import { Form } from "../FormularioContainer/Form";
 import { formWhitValidation } from './../FormularioContainer/formWhitValidation';
 import { useCartContext } from "../../contexts/CartContext";
 import OrderDetails from "../OrderDetails/OrderDetails";
+import carritoVacio from '../../../public/assets/carrito-vacio.png'
+
 
 const FormWhitValidation = formWhitValidation(Form);
 
@@ -82,7 +84,7 @@ export const CartContainer = () => {
                             <br />
                             <br />
                             <img
-                                src="dist\assets\carrito-vacio.png"
+                                src={carritoVacio}
                                 alt="imagen de carrito de compras vacío"
                                 style={{ height: "250px", width: '250px' }}
                             />

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { useCartContext } from "../../contexts/CartContext";
+import codigoBarras from '../../../public/assets/codigo-barras.png'
 
 const OrderDetails = () => {
     const { cartList, getTotalPrice, vaciarCarrito } = useCartContext();
@@ -29,7 +30,7 @@ const OrderDetails = () => {
                     <strong>Total: ${getTotalPrice().toFixed(2)}</strong>
                     <br />
                     <img
-                        src="dist\assets\codigo-barras.png"
+                        src={codigoBarras}
                         alt="imagen código de barras"
                         className="img-fluid"
                         style={{ maxHeight: "100px" }}
